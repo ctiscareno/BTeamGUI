@@ -51,20 +51,36 @@
             var myFirstRouter = new Router('myFirstRouter', [
                 {
                     path: '/',
-                    name: 'Root'
+                    name: 'Login Page'
                 },
                 {
-                    path: '/about',
-                    name: 'About'
+                    path: '/event',
+                    name: 'Event Page'
                 },
                 {
-                    path: '/contact',
-                    name: 'Contact'
+                    path: '/system',
+                    name: 'System Page'
+                },
+                {
+                    path: '/task',
+                    name: 'Task Page'
+                },
+                {
+                    path: '/finding',
+                    name: 'Finding Page'
+                },
+                {
+                    path: '/report',
+                    name: 'Reports Page'
+                },
+                {
+                    path: '/archive',
+                    name: 'Archive Page'
                 },
             ]);
             var currentPath = window.location.pathname;
             if(currentPath === '/') {
-                view.innerHTML = 'You are on the root page';
+                view.innerHTML = 'You are automatically on the Login page as it is the root page';
             }
             else {
                 var route = myFirstRouter.routes.filter(function(r) {
@@ -83,9 +99,13 @@
 <body>
     <h3> Simple FRIC router</h3>
     <div id="view"></div>
-    <button route="/">Root</button>
-    <button route="/about">About</button>
-    <button route="/contact">Contact</button>
+    <button route="/">Login Page</button>
+    <button route="/event">Event Page</button>
+    <button route="/system">System Page</button>
+    <button route="/task">Task Page</button>
+    <button route="/finding">Findings Page</button>
+    <button route="/report">Reports Page</button>
+    <button route="/archive">Archive Page</button>
     <button route="404">404</button>
 </body>
 </html>
