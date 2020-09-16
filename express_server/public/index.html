@@ -9,7 +9,7 @@
     }
     </style>
     <script>
-        windowonload = function() {
+        window.onload = function() {
             console.log('DOM has loaded');
             //create Router constructor
 
@@ -26,6 +26,7 @@
                     return r.path === route;
                 })[0];
                 if(!routeInfo) {
+                    window.history.pushState({}, '', 'error')
                     view.innerHTML = 'No route exists with this path'
                 }
                 else {
@@ -36,7 +37,7 @@
 
             //add event listeners
 
-            active.Routes.forEach(function(route) {
+            activeRoutes.forEach(function(route) {
                 route.addEventListener('click', navigate, false);
             });
 
